@@ -1,0 +1,64 @@
+Assembly Language Programming Exercise
+David Fielder
+Josh Philpott
+Problem 1
+
+ORG 100
+If,     Load X
+	Subt One
+        Skipcond 800
+	Jump Endif
+Then,   Load X
+	Add X
+	Store Y
+	Clear
+	Store X
+Endif,  Load Y
+	Add One
+	Store Y
+	Halt
+X,	dec 4
+Y,	dec 5
+One,    dec 1
+
+
+
+Problem 2
+
+ORG 100
+	Load X
+Loop,	Subt Ten
+	Skipcond 000
+	Jump Endloop
+	Load X
+	Load X
+	Add One
+	Store X
+	Jump Loop
+Endloop, Halt	
+
+X,   dec 1
+Ten, dec 10
+One, dec 1
+
+
+Problem 3
+
+ORG 100
+	Load X
+Loop,	Subt Ten
+	Skipcond 000
+	Jump Endloop
+	Load Sum
+	Add X
+	Store Sum
+	Load X
+	Add One
+	Store X
+	Jump Loop
+Endloop, Halt	
+
+X,   dec 1
+Ten, dec 10
+One, dec 1
+Sum, dec 0

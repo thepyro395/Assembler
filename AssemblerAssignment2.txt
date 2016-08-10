@@ -1,0 +1,56 @@
+David Fielder
+Josh Philpott
+Brent Rowland
+Philip Gammill
+
+ORG 100
+	Load A
+	STORE Temp
+	JnS Subr
+	LOAD A
+	Store A
+	output A
+
+	Load C
+	STORE Temp
+	JnS SubrB
+	LOAD C
+	Store C
+	output C
+	
+	ADD A
+	OUTPUT
+
+	Halt
+
+A,	dec 2
+B,	dec 4
+C,	dec 2
+D,	dec 4
+One,	DEC 1
+Temp,	dec 0
+Final,	dec 0
+
+Subr,	Hex 0
+SubSub,	LOAD B
+	SUBT One
+	STORE B
+	SKIPCOND 800
+	JUMPI Subr
+	LOAD A
+	ADD Temp
+	STORE A
+	JUMP SubSub
+
+SubrB,	Hex 0
+SubSuB, LOAD D
+	SUBT One
+	STORE D
+	SKIPCOND 800
+	JUMPI SubrB
+	LOAD C
+	ADD Temp
+	STORE C
+	JUMP SubSuB
+	END
+	
